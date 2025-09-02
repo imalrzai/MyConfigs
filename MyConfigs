@@ -1,11 +1,37 @@
-[Interface]
-Address = 10.203.218.66/32
-DNS = 1.1.1.1
-MTU = 1280
-PrivateKey = SO6zSIE5c3D2+x7ZVQ0vuVaEGZbYaftppVKCdKIWOEc=
+client
+dev tun
+proto udp
+route-delay 2
+resolv-retry infinite
+nobind
+persist-key
+persist-tun
+auth-user-pass
+cipher AES-256-CBC
+verb 3
+connect-retry 2
+connect-retry-max 2
+remote 185.82.218.85 443
 
-[Peer]
-AllowedIPs = 0.0.0.0/0, ::/0
-Endpoint = awg3.lax01.jupiter.888x1.com:33434
-PublicKey = /clHINdkGkVvaTdhkPGErbe7sdhdfkTtFL4i4TOADQo=
-PersistentKeepalive = 25
+<ca>
+-----BEGIN CERTIFICATE-----
+MIIDSzCCAjOgAwIBAgIUB7gbNJUH9sXEAyuKln3ozBhlPSEwDQYJKoZIhvcNAQEL
+BQAwFjEUMBIGA1UEAwwLRWFzeS1SU0EgQ0EwHhcNMjUwMzA4MDUxMzQ4WhcNMzUw
+MzA2MDUxMzQ4WjAWMRQwEgYDVQQDDAtFYXN5LVJTQSBDQTCCASIwDQYJKoZIhvcN
+AQEBBQADggEPADCCAQoCggEBALuFWlig1Uvm1Hy1WUjR5FGYcttmrKPCvpkByUxw
+EFe5IDaGAVHitY1Mik+sCLeLFboqQiPl6rcR8Mv1XmEYKNAjgx+IZqj9ObPOoAZP
++VwH/xXqHBqS7WnBJ5w+Tu6ndpfhbD8MPjiGQmyDrGifLiQb0HfQPK3fv3SzVr7x
+sxOZ8Y79H+vZEFkq261cRr9+voI7ZyrM5ZFz+eVAqAK2Mq8mHHC2HSR87IWOlDVc
+mKHggApM/nphT9euXMEZeJ2eakc0TSLlokNMqD815A3WNDTq2X3OifPdlVzTPeWy
+7r0a5mSO/pcissqYh2s7mbdIrKFRypdVSdMoEKylyYAr08MCAwEAAaOBkDCBjTAM
+BgNVHRMEBTADAQH/MB0GA1UdDgQWBBS+d4DMfaJY+vwVR9z4U4pxQZVZkDBRBgNV
+HSMESjBIgBS+d4DMfaJY+vwVR9z4U4pxQZVZkKEapBgwFjEUMBIGA1UEAwwLRWFz
+eS1SU0EgQ0GCFAe4GzSVB/bFxAMripZ96MwYZT0hMAsGA1UdDwQEAwIBBjANBgkq
+hkiG9w0BAQsFAAOCAQEADMcFzvgyi+S0BkGOg1tbLW0IfkIB4BWsOH5foTpAQ5KO
+rlhh5zlZG2fm2IIm674zUTtWUJnnI507cg7thlld24vZ+Bj+vS3fWRqiG2qTi0Hl
+/68lFwMZlOFN2xkurQMpVuH8XYx19V1lGGCcb1d+Jg8ZsCSCiNUIkmbWuJpqiw+C
+joAwEdKJRyNFX57LAALro7Vg+jnSVJpomPG9T5eYKeQYmEGPZHRPtDHVVaOCyNHl
+hl5y4iJtaEWhhUbWE05/bP8uCN/miRRdh5zlKVk9ms9PNtP+/O9Kq2ULH9mZCDbT
+flhjPsw5qljKn24/Z8UnfR2Gdqd3sUi5qMh75N3uDw==
+-----END CERTIFICATE-----
+</ca>
