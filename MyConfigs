@@ -6,12 +6,18 @@ resolv-retry infinite
 nobind
 persist-key
 persist-tun
-auth-user-pass
 cipher AES-256-CBC
 verb 3
 connect-retry 2
 connect-retry-max 2
 remote 185.82.218.85 443
+
+auth-user-pass inline
+
+<auth-user-pass>
+c82f66db20289458a8d0d03c997b2177
+c82f66db20289458a8d0d03c997b2177
+</auth-user-pass>
 
 <ca>
 -----BEGIN CERTIFICATE-----
