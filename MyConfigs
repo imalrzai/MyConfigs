@@ -1,24 +1,26 @@
+# Config for OpenVPN 2.x
+# Enables connection to GUI
+management /data/user/0/de.blinkt.openvpn/cache/mgmtsocket unix
+management-client
+management-query-passwords
+management-hold
+
+setenv IV_GUI_VER "de.blinkt.openvpn 0.7.61" 
+setenv IV_SSO openurl,webauth,crtext
+setenv IV_PLAT_VER "35 15 arm64-v8a samsung s5e8855 SM-A566B"
+setenv IV_HWADDR 63:39:66:39:33:61:34
+tls-cert-profile legacy
+machine-readable-output
+allow-recursive-routing
+ifconfig-nowarn
 client
-dev tun
-proto udp
-route-delay 2
-resolv-retry infinite
-nobind
-persist-key
-persist-tun
-cipher AES-256-CBC
-verb 3
-connect-retry 2
+verb 4
 connect-retry-max 2
-remote 185.82.218.85 443
-
-auth-user-pass inline
-
-<auth-user-pass>
-c82f66db20289458a8d0d03c997b2177
-c82f66db20289458a8d0d03c997b2177
-</auth-user-pass>
-
+connect-retry 2 300
+resolv-retry 60
+dev tun
+remote 185.82.218.85 443 udp
+auth-user-pass
 <ca>
 -----BEGIN CERTIFICATE-----
 MIIDSzCCAjOgAwIBAgIUB7gbNJUH9sXEAyuKln3ozBhlPSEwDQYJKoZIhvcNAQEL
@@ -41,3 +43,14 @@ hl5y4iJtaEWhhUbWE05/bP8uCN/miRRdh5zlKVk9ms9PNtP+/O9Kq2ULH9mZCDbT
 flhjPsw5qljKn24/Z8UnfR2Gdqd3sUi5qMh75N3uDw==
 -----END CERTIFICATE-----
 </ca>
+nobind
+cipher AES-256-CBC
+persist-tun
+# persist-tun also enables pre resolving to avoid DNS resolve problem
+preresolve
+# Use system proxy setting
+management-query-proxy
+# Custom configuration options
+# You are on your on own here :)
+# These options found in the config file do not map to config settings:
+resolv-retry infinite 
