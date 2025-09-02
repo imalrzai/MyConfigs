@@ -1,10 +1,11 @@
 [Interface]
-Address = 10.203.218.73/32
+Address = 10.203.218.66/32
 DNS = 1.1.1.1
-MTU = 1350
-PrivateKey = H4D4eWxOeDcAMMYp0P0qWyCgU0nRhwZV5Xc3dmdQhUM=
+MTU = 1280
+PrivateKey = SO6zSIE5c3D2+x7ZVQ0vuVaEGZbYaftppVKCdKIWOEc=
 
 [Peer]
 AllowedIPs = 0.0.0.0/0, ::/0
-Endpoint = awg10.lax01.jupiter.888x1.com:443
-PublicKey = UoG5e5Yt3YB2uDj0R8lFg9A4GxS3rF1WwDj8Mx9Y0Ak=
+Endpoint = awg3.lax01.jupiter.888x1.com:33434
+PublicKey = /clHINdkGkVvaTdhkPGErbe7sdhdfkTtFL4i4TOADQo=
+PersistentKeepalive = 25
